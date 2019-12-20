@@ -6,5 +6,3 @@ const surfacePreparationSchema = new mongoose.Schema({
 });
 
 module.exports = mongoose.model("SurfacePreparation", surfacePreparationSchema);
-
-const mongoose = require("mongoose");

@@ -5,15 +5,17 @@ const cors = require("cors");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+
 const ordersRoutes = require("./routes/orders");
 const materialsRoutes = require("./routes/materials");
-const conveyorsRoutes = require("./routes/conveyors");
+const linesRoutes = require("./routes/lines");
 const powderCoatsRoutes = require("./routes/powderCoats");
 const processesRoutes = require("./routes/processes");
 const surfacePreparationsRoutes = require("./routes/surfacePreparations");
+const productionsRoutes = require("./routes/productions");
 
 const usersRoutes = require("./routes/users");
-const authRoutes = require("./routes/auth");
+// const authRoutes = require("./routes/auth");
 
 mongoose
   .connect("mongodb://localhost:27017/uretim", {
@@ -34,12 +36,13 @@ app.use(cors());
 
 app.use("/orders", ordersRoutes);
 app.use("/materials", materialsRoutes);
-app.use("/conveyors", conveyorsRoutes);
+app.use("/lines", linesRoutes);
 app.use("/powderCoats", powderCoatsRoutes);
 app.use("/processes", processesRoutes);
 app.use("/surfacePreparations", surfacePreparationsRoutes);
+app.use("/productions", productionsRoutes);
 
 app.use("/users", usersRoutes);
-app.use("/auth", authRoutes);
+// app.use("/auth", authRoutes);
 
 app.listen(PORT, () => console.log(`Server is listening on PORT: ${PORT}...`));

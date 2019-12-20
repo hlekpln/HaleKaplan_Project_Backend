@@ -6,7 +6,7 @@ const processSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "SurfacePreparation"
   },
-  conveyor: { type: mongoose.Schema.Types.ObjectId, ref: "Conveyor" }
+  line: { type: mongoose.Schema.Types.ObjectId, ref: "Line" }
 });
 
 module.exports = mongoose.model("Process", processSchema);

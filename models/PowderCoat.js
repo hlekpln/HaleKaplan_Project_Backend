@@ -16,7 +16,8 @@ const powderCoatSchema = new mongoose.Schema({
       temprature: Number,
       time: Number
     }
-  ]
+  ],
+  price: Number
 });
 
 module.exports = mongoose.model("PowderCoat", powderCoatSchema);

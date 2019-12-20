@@ -5,6 +5,7 @@ const PowderCoat = require("../models/PowderCoat");
 
 router.get("/", async (request, response) => {
   const powderCoats = await PowderCoat.find();
+  console.log("bak")
   return response.send(powderCoats);
 });
 
@@ -14,6 +15,8 @@ router.get("/:id", async (request, response) => {
 });
 
 router.post("/", async (request, response) => {
+  console.log(request.body);
+
   const powderCoat = new PowderCoat(request.body);
   const savedPowderCoat = await powderCoat.save();
   return response.send(savedPowderCoat);
